@@ -1,7 +1,4 @@
-#!/bin/sh
-
-# Install web server (Apache), PHP and minimum PHP extension requirements to run Laravel
-sudo apt-get update && sudo apt-get install apache2 php libapache2-mod-php php-mbstring php-cli php-bcmath php-json php-xml php-zip php-pdo php-common php-tokenizer php-mysql -y
+sudo apt-get update && sudo apt-get install apache2 php8.1 php-curl libapache2-mod-php php-mbstring php-cli php-bcmath php-json php-xml php-zip php-pdo php-common php-tokenizer php-mysql -y
 
 # Install composer (package dependencies manager)
 sudo curl -sS https://getcomposer.org/installer | php
@@ -13,8 +10,8 @@ sudo touch /etc/apache2/sites-available/laravel.conf
 sudo chmod 777 -R /etc/apache2/sites-available/laravel.conf
 sudo cat << EOF > /etc/apache2/sites-available/laravel.conf
 <VirtualHost *:80>
-        DocumentRoot /var/www/html/Database_Seeder_Factory_Laravel/public
-        <Directory /var/www/html/Database_Seeder_Factory_Laravel>
+        DocumentRoot /var/www/html/challenge-spbe/public
+        <Directory /var/www/html/challenge-spbe>
                 AllowOverride All
         </Directory>
 </VirtualHost>
@@ -28,10 +25,10 @@ sudo a2enmod rewrite
 # Restart Apache
 sudo systemctl restart apache2
 
-# Setup Laravel web
+# Setup Laravel
 cd /var/www/html
-sudo git clone https://github.com/AfiNaufal97/Database_Seeder_Factory_Laravel.git
-cd Database_Seeder_Factory_Laravel/
+sudo git clone https://github.com/satyawasista/challenge-spbe.git
+cd challenge-spbe/
 sudo composer install --no-interaction
 sudo chmod 755 -R *
 sudo chown www-data:www-data -R *
