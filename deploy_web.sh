@@ -10,8 +10,8 @@ sudo touch /etc/apache2/sites-available/laravel.conf
 sudo chmod 777 -R /etc/apache2/sites-available/laravel.conf
 sudo cat << EOF > /etc/apache2/sites-available/laravel.conf
 <VirtualHost *:80>
-        DocumentRoot /var/www/html/challenge-spbe/public
-        <Directory /var/www/html/challenge-spbe>
+        DocumentRoot /var/www/html/laravel_start/public
+        <Directory /var/www/html/laravel_start>
                 AllowOverride All
         </Directory>
 </VirtualHost>
@@ -27,8 +27,8 @@ sudo systemctl restart apache2
 
 # Setup Laravel
 cd /var/www/html
-sudo git clone https://github.com/satyawasista/challenge-spbe.git
-cd challenge-spbe/
+sudo git clone https://github.com/AfiNaufal97/laravel_start.git
+cd laravel_start/
 sudo composer install --no-interaction
 sudo chmod 755 -R *
 sudo chown www-data:www-data -R *
