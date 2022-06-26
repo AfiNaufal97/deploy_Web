@@ -30,7 +30,7 @@ sudo systemctl restart apache2
 
 # Setup Laravel web
 cd /var/www/html
-sudo git clone https://github.com/fabianhkm/deploy-tps3r
+sudo git clone https://github.com/fabianhkm/tps3r-coba.git
 cd deploy-tps3r/
 sudo composer install --no-interaction
 sudo chmod 755 -R *
