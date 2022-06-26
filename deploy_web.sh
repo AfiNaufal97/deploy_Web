@@ -31,7 +31,7 @@ sudo systemctl restart apache2
 # Setup Laravel web
 cd /var/www/html
 sudo git clone https://github.com/AfiNaufal97/Database_Seeder_Factory_Laravel.git
-cd deploy-tps3r/
+cd Database_Seeder_Factory_Laravel/
 sudo composer install --no-interaction
 sudo chmod 755 -R *
 sudo chown www-data:www-data -R *
